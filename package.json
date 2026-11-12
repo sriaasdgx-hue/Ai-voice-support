@@ -1,0 +1,16 @@
+{
+  "name": "sriaas-ai-backend",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Independent general chat and voice backend for SRIAAS",
+  "engines": {"node": ">=24 <25"},
+  "scripts": {
+    "start": "node --env-file-if-exists=.env src/server.js",
+    "worker": "node --env-file-if-exists=.worker.env src/worker.js",
+    "test": "node --test test/*.test.js",
+    "migrate": "node --env-file-if-exists=.env scripts/migrate.js",
+    "smoke": "node --env-file-if-exists=.env scripts/smoke.js"
+  },
+  "dependencies": {"express": "^5.1.0", "pg": "^8.16.3", "ws": "^8.18.3", "zod": "^4.1.12"}
+}

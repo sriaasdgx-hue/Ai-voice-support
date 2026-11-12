@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SRIAAS Assistant Test</title><link rel="stylesheet" href="/style.css"><script type="module" src="/app.js"></script></head>
+<body><main>
+  <header><div class="mark">S</div><div><p class="eyebrow">SRIAAS · GENERAL CONVERSATION</p><h1>Chat or talk.</h1><p class="muted">Gemma 4 E4B · Bodhan Indic · AI4Bharat Parler</p></div><span id="connection" class="badge">Not connected</span></header>
+  <section id="login" class="card"><label for="token" id="token-label">Access token</label><div class="row"><input id="token" type="password" autocomplete="off" placeholder="Paste your access token"><button id="connect">Connect</button></div><p class="muted" id="auth-help">Your token stays in this page's memory. It is cleared when you refresh.</p></section>
+  <section class="settings card"><div><label for="recognition">Language you speak</label><select id="recognition"><option value="auto">Auto detect</option></select></div><div><label for="language">Reply language</label><select id="language"><option value="auto">Match my language</option></select></div><div><label for="delivery">Voice expression</label><select id="delivery"><option value="auto">Automatic · subtle</option><option value="neutral">Neutral</option></select></div><button id="refresh" disabled>Check models</button><p id="language-note" class="muted wide">Choose a fixed language for more reliable matching.</p></section>
+  <div class="row history"><select id="history" aria-label="Conversation history" disabled><option value="">Conversation history</option></select><button id="new" disabled>New chat</button><button id="delete" class="quiet" disabled>Delete chat</button></div>
+  <p id="notice" role="alert" hidden></p>
+  <section id="messages" class="messages" aria-live="polite"><div class="empty">A conversation starts with hello.<small>Type below or start a voice conversation.</small></div></section>
+  <p id="transcript" class="muted" aria-live="polite"></p>
+  <form id="composer" class="row"><textarea id="text" rows="2" maxlength="2000" placeholder="Ask anything…" aria-label="Message" disabled></textarea><button id="send" disabled>Send</button><button id="stop" type="button" class="quiet" disabled>Stop reply</button></form>
+  <section class="voicebar card"><span id="voice-state">Voice is off</span><div class="row"><button id="talk" disabled>Start voice</button><button id="mute" class="quiet" disabled>Mute</button><button id="end" class="quiet" disabled>End session</button></div></section>
+  <footer><span id="metrics">Timing appears after a reply.</span><p>Stage timings start at finalized input; voice detection, network and device playback add time. Experimental languages can vary in fluency. Live microphone audio is not saved.</p></footer>
+</main></body></html>

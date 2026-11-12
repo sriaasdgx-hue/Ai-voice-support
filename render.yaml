@@ -1,0 +1,37 @@
+# Default: existing Supabase/Postgres; no new database is created.
+# Supply DATABASE_URL when creating the Render Blueprint.
+services:
+- type: web
+  name: sriaas-ai-backend
+  runtime: node
+  region: singapore
+  plan: starter
+  numInstances: 1
+  buildCommand: npm ci --omit=dev
+  startCommand: npm start
+  healthCheckPath: /healthz
+  envVars:
+  - key: NODE_ENV
+    value: production
+  - key: NODE_VERSION
+    value: 24.22.3
+  - key: AUTH_MODE
+    value: test-key
+  - key: TEST_API_KEY
+    generateValue: true
+  - key: MODEL_TRANSPORT
+    value: worker
+  - key: MODEL_WORKER_TOKEN
+    generateValue: true
+  - key: STORAGE
+    value: postgres
+  - key: DATABASE_URL
+    sync: false
+  - key: DATABASE_SSL
+    value: 'true'
+  - key: GEMMA_MODEL
+    value: voice-lab-gemma4
+  - key: MAX_OUTPUT_TOKENS
+    value: '1024'
+  - key: VOICE_SESSION_SECONDS
+    value: '600'
